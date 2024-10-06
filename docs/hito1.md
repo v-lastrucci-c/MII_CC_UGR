@@ -1,11 +1,11 @@
 # Descripción del proyecto
 El proyecto consistirá en un agente inteligente desarrollado en Python aprovechando el framework de LangGraph, ofreciendo una interfaz web intuitiva mediante Flask y gestionando las peticiones API con FastAPI.
 
-Permitirá a los usuarios registrarse, iniciar sesión y recuperar sus contraseñas de manera segura, almacenando sus datos y el historial de conversaciones en una base de datos PostgreSQL.
+Permitirá a los usuarios registrarse, iniciar sesión y recuperar sus contraseñas de manera segura, almacenando sus datos en una base de datos PostgreSQL.
 
-El agente será desarrollado mediante LangGraph para acceder y actualizar grafos de conocimiento, proporcionando respuestas precisas y contextualizadas. Además, los usuarios podrán crear eventos a través de integraciones con herramientas externas como Google Calendar, y beneficiarse de funcionalidades avanzadas como análisis de sentimientos y generación de reportes.
+El agente será desarrollado mediante LangGraph para acceder y actualizar grafos de conocimiento, proporcionando respuestas precisas y contextualizadas. Además, los usuarios podrán crear eventos a través de integraciones con herramientas externas como Google Calendar.
 
-El sistema garantizará la seguridad de los datos mediante encriptación y contará con monitoreo y logging para asegurar un rendimiento óptimo y facilitar la detección de problemas. Todo esto se desplegará en una plataforma PaaS todavía por determinar, asegurando escalabilidad y facilidad de mantenimiento.
+El sistema garantizará la seguridad de los datos mediante encriptación de contraseñas y contará con monitoreo y logging para asegurar un rendimiento óptimo y facilitar la detección de problemas. Todo esto se desplegará en una plataforma PaaS todavía por determinar, asegurando escalabilidad y facilidad de mantenimiento.
 
 Para más información sobre la elección de las teconologías empleadas clique [aquí](./hito1/tecnologies.md).
 
