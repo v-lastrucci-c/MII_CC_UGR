@@ -1,4 +1,4 @@
-# Tecnologías Recomendadas y Comparativas
+# Tecnologías Usadas y Comparativas
 
 ## Flask
 
@@ -105,3 +105,7 @@
 ---
 
 Las tecnologías elegidas ofrecen un equilibrio entre funcionalidad, rendimiento y facilidad de uso, lo que las hace ideales para el desarrollo de esta aplicación que gestiona usuarios y utiliza modelos de lenguaje.
+
+## Documentación Adicional
+1. [Descripción detallada del proyecto](../hito1.md)
+2. [Inicio](../../README.md)
