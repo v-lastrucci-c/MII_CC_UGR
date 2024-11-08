@@ -45,17 +45,8 @@ jobs:
     - name: Test WEB with Taskipy
       working-directory: ./src/web
       run: poetry run task test
-
-    - name: Upload API Coverage to Codecov
+    
+    - name: Upload results to Codecov
       uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        flags: api
-        files: ./src/api/coverage.xml
-
-    - name: Upload Web Coverage to Codecov
-      uses: codecov/codecov-action@v4
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        flags: web
-        files: ./src/web/coverage.xml
