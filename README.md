@@ -1,4 +1,7 @@
 # MII_CC_UGR
+[![API Coverage](https://codecov.io/gh/v-lastrucci-c/MII_CC_UGR/branch/main/graph/badge.svg?flag=api)](https://codecov.io/gh/v-lastrucci-c/MII_CC_UGR)
+[![Web Coverage](https://codecov.io/gh/v-lastrucci-c/MII_CC_UGR/branch/main/graph/badge.svg?flag=web)](https://codecov.io/gh/v-lastrucci-c/MII_CC_UGR)
+
 Repositorio para almacenar las prácticas de CC del curso 24-25 del MUII en la UGR.
 
 ## Descripción del proyecto
