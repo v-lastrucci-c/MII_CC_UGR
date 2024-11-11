@@ -52,7 +52,7 @@ TESTING = Activa el modo de pruebas en Flask
 ```
 
 ## 5. Iniciar la API
-Para iniciar la `api` deberemos ubicarnos en el directorio `cd/api` y ejecutar el siguiente comando:
+Para iniciar la `api` deberemos ubicarnos en el directorio `src/api` y ejecutar el siguiente comando:
 ```bash
 fastapi dev app/main.py
 ```
