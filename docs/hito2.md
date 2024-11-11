@@ -61,6 +61,10 @@ jobs:
 ...
 ```
 
+<img src="./hito2/imgs/github_actions.PNG" alt="Github Actions" width="400" />
+
+*Para ver más resultados de la ejecución del workflow de Integración Continua clique [aquí](https://github.com/v-lastrucci-c/MII_CC_UGR/actions)*.
+
 ## Documentación Adicional
 1. [Librería de Aserciones](./hito2/assertion_library.md)
 2. [Marco de Pruebas](./hito2/testing_framework.md)
