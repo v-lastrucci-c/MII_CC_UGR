@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "web"
-version = "1.0.1"
+version = "1.0.0"
 description = "Aplicacion Flask para gestionar los Usuarios y la conexion con la API de FastAPI"
 authors = ["v-lastrucci-c <v.lastrucci.c@gmail.com>"]
 license = "MIT"

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "api"
-version = "1.0.1"
+version = "1.0.0"
 description = "API AICHRONOS"
 authors = ["v-lastrucci-c <v.lastrucci.c@gmail.com>"]
 license = "MIT"
