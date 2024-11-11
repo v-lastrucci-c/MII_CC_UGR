@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "web"
+version = "1.0.1"
+description = "Aplicacion Flask para gestionar los Usuarios y la conexion con la API de FastAPI"
+authors = ["v-lastrucci-c <v.lastrucci.c@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^3.0.3"
+Flask-SQLAlchemy = "^3.1.1"
+psycopg2 = "^2.9.10"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.3"
+pytest-cov = "^6.0.0"
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.14.0"
+
+[tool.taskipy.tasks]
+test = "pytest --cov=app --cov-report=html --cov-report=xml tests/"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

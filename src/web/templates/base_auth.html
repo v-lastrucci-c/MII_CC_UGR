@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}AIChronos{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+<body>
+    <body>
+
+    <div id="header-container">
+        <a href="{{ url_for('auth.index') }}"> <h1>AICHRONOS</h1> </a>
+    </div>
+
+    <div id="flash-messages-container">
+        <div id="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                            <button class="close-btn" onclick="this.parentElement.style.display='none';">&times;</button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    <div id="digital-rain"></div>
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/rain.js') }}"></script>
+</body>
+</html>

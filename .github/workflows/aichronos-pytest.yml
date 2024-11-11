@@ -1,11 +1,8 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: Python AIChronos
+name: Python AIChronos Tests and Upload Coverage
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "hito2" ]
   pull_request:
     branches: [ "main" ]
 
@@ -13,32 +10,43 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
+  test:
+    name: Run tests and collect coverage
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.11.10
-      uses: actions/setup-python@v3
+    - name: Checkout
+      uses: actions/checkout@v4
       with:
-        python-version: "3.11.10"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with RufF
-      run: |
-        pip install ruff
-        ruff check --output-format=github .
-      continue-on-error: true
-    - name: Test with pytest
-      run: pytest tests.py --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
-    - name: Upload pytest test results
-      uses: actions/upload-artifact@v4
+        fetch-depth: 0
+    
+    - name: Set up Python 3.11.9
+      uses: actions/setup-python@v5
       with:
-        name: pytest-results-${{ matrix.python-version }}
-        path: junit/test-results-${{ matrix.python-version }}.xml
-       # Use always() to always run this step to publish test results when there are test failures
-      if: ${{ always() }}
+        python-version: "3.11.9"
+
+    - name: Install Poetry
+      run: |
+        pip install poetry
+
+    - name: Install dependencies of API
+      working-directory: ./src/api
+      run: |
+        poetry install
+
+    - name: Install dependencies of WEB
+      working-directory: ./src/web
+      run: |
+        poetry install
+
+    - name: Test API with Taskipy
+      working-directory: ./src/api
+      run: poetry run task test
+    
+    - name: Test WEB with Taskipy
+      working-directory: ./src/web
+      run: poetry run task test
+    
+    - name: Upload results to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}

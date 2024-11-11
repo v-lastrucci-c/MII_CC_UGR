@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+/* Header and logo styling */
+#header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    color: inherit;
+    margin: 0;
+}
+
+#header-container a {
+    text-decoration: none;
+    color: inherit;
+    backdrop-filter: blur(5px);
+}
+
+#logo-container {
+    position: absolute;
+    right: 20px;
+    top: 70%;
+    transform: translateY(-50%);
+}
+
+#logo-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+#logo-btn:hover {
+    color: #00cc00;
+}
+
+#logo-logout-container {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    display: inline-block;
+    z-index: 1000;
+}
+
+/* Logout form */
+#logout-form-container {
+    position: absolute;
+    top: 7px;
+    right: 100%;
+    margin-right: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+#logout-btn {
+    background-color: #ff0000;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#logout-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Flash messages */
+#flash-messages-container {
+    width: 100%;
+    padding-top: 20px;
+    z-index: 100;
+}
+
+#flash-messages {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #00ff00;
+    background-color: rgba(0, 255, 0, 0.1);
+    color: inherit;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.alert-success {
+    border-color: #00ff00;
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+.alert-error {
+    border-color: #ff0000;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Terminal styling */
+#terminal {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    font-size: 20px;
+}
+
+#output {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+}
+
+#input-area {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#prompt {
+    margin-right: 10px;
+}
+
+#user-input {
+    flex-grow: 1;
+    background-color: transparent;
+    font-family: 'VT323', monospace;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    outline: none;
+}
+
+#submit-btn {
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Digital rain effect */
+#digital-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(1px);
+}
+
+.rain-column {
+    position: absolute;
+    top: -20px;
+    font-size: 20px;
+    animation: rain linear infinite, fadeIn 0.3s ease-in forwards;
+    color: rgba(0, 255, 0, 0.8);
+    text-shadow: 0 0 8px #00ff00;
+    opacity: 0;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}

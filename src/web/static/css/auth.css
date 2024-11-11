@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+}
+
+/* Header styling */
+#header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    color: inherit;
+    margin: 0;
+}
+
+#header-container a {
+    text-decoration: none;
+    color: inherit;
+    backdrop-filter: blur(5px);
+}
+
+#flash-messages-container {
+    width: 100%;
+    padding-top: 20px; /* Add space at the top */
+    z-index: 100;
+}
+
+#flash-messages {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.alert {
+    padding: 10px;
+    backdrop-filter: blur(5px);
+    margin-bottom: 5px;
+    border: 1px solid #00ff00;
+    background-color: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    position: relative;
+}
+
+.alert .close-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+/* Add specific styles for success and error alerts */
+.alert-success {
+    border-color: #00ff00;
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+.alert-error {
+    border-color: #ff0000;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+}
+
+#terminal {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido hacia la parte superior */
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    margin-top: 40px;
+}
+
+
+#login-form {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid #00ff00;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    z-index: 10;
+}
+
+#register-form {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid #00ff00;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    z-index: 10;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-size: 32px;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+}
+
+.input-group input, /* Selecciona solo los inputs dentro del input-group */
+button[type="submit"] {
+    width: 100%; /* Ajusta el ancho completo del contenedor */
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: 'VT323', monospace;
+    box-sizing: border-box; /* Asegura que el padding no altere el ancho */
+}
+
+button[type="submit"] {
+    margin-top: 1rem; /* Opcional: separación entre el último input y el botón */
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.register-link a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.login-link a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+#digital-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(1px); /* Add blur effect */
+}
+
+.rain-column {
+    position: absolute;
+    top: -20px;
+    font-size: 20px;
+    animation: rain linear infinite;
+    color: rgba(0, 255, 0, 0.8); /* Slightly transparent */
+    text-shadow: 0 0 8px #00ff00; /* Add glow effect */
+}
+
+/* Optional: Add a subtle transition when rain columns appear */
+.rain-column {
+    opacity: 0;
+    animation: rain linear infinite, fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}

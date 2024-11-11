@@ -1,12 +1,22 @@
 # MII_CC_UGR
+[![Coverage](https://codecov.io/gh/v-lastrucci-c/MII_CC_UGR/branch/main/graph/badge.svg)](https://codecov.io/gh/v-lastrucci-c/MII_CC_UGR)
+
 Repositorio para almacenar las prácticas de CC del curso 24-25 del MUII en la UGR.
 
 ## Descripción del proyecto
 El proyecto **AIChronos** consistirá en la creación de una aplicación que permita la interactuación con un agente inteligente al cuál será accedible mediante el loggeo del usuario y con el que podrá consultar temas generales al mismo tiempo que crear eventos en Google Calendar.
 
-<img src="./imgs/logo.jpg" alt="Logo" width="200" />
+<img src="./imgs/logo.png" alt="Logo" width="325" />
 
-## Hito 1
+## 📍 Hito 2
+- 🔧 [Configuración de la integración Continua](./docs/hito2.md)
+    - 📝 [Descripción detallada de la elección del gestor de tareas](./docs/hito2/tasks_manager.md)
+    - 📚 [Descripción detallada de la biblioteca de aserciones](./docs/hito2/assertion_library.md)
+    - 🧪 [Descripción detallada de la elección del marco de pruebas](./docs/hito2/testing_framework.md)
+    - 🔄 [Descripción detallada de la elección del gestor de integración continua](./docs/hito2/continous_integration.md)
+- 📂 [Requisitos y Uso del Repo](./docs/hito2/repo_usage.md)
+
+## 📍 Hito 1
 - 📄 [Descripción detallada del proyecto](./docs/hito1.md)
     - Conoce en profundidad los objetivos, alcance y funcionalidades clave del proyecto.
     - Conoce las tecnologías empleadas [aquí](./docs/hito1/tecnologies.md).
@@ -15,11 +25,11 @@ El proyecto **AIChronos** consistirá en la creación de una aplicación que per
 - 📜 [Licencia](./LICENSE)
     - Revisa los términos y condiciones de la licencia de MIT.
 
-## Desarrollo y Evolución
-### Milestones
+## 🚀 Desarrollo y Evolución
+### ⏳ Milestones
 Para conocer los hitos del desarrollo del proyecto pulse [aquí](./docs/hito1/milestones.md).
 
-### Historias de Usuario
+### 👤 Historias de Usuario
 Para conocer las historias de usuario del proyecto pulse [aquí](./docs/hito1/hu.md).
 
 
