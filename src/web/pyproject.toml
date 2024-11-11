@@ -22,7 +22,7 @@ pytest-cov = "^6.0.0"
 taskipy = "^1.14.0"
 
 [tool.taskipy.tasks]
-test = "pytest --cov=app --cov-report=html --cov-report=xml tests/test_flask_app.py"
+test = "pytest --cov=app --cov-report=html --cov-report=xml tests/"
 
 [build-system]
 requires = ["poetry-core"]
