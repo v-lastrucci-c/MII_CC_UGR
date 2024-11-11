@@ -40,7 +40,7 @@ Se alinea principalmente con el **TDD**, facilitando la escritura de pruebas uni
 
 #### Estilo
 
-También se asocia con el **TDD**, pero su enfoque es más tradicional y estructurado que **Pytest**.
+También se asocia con el **TDD**, pero su enfoque es más tradicional que **Pytest**.
 
 
 ### 3. Behave
@@ -90,7 +90,7 @@ Centrado en el comportamiento del sistema y la satisfacción de los requisitos d
 
 Como este proyecto carece de un equipo no técnico, considero que es más conveniente asegurar la calidad interna del código, facilitando un desarrollo ágil y orientado a pruebas. Por lo tanto el estilo elegido para el desarrollo de las pruebas será **TDD**.
 
-Entre las librerías comparadas se han comentado dos que servirían para este estilo, **Pytest** y **Unittest**. Nos decantaremos por `Pytest` debido a su sintaxis, por los elementos `fixtures` y por la posibilidad de parametrizar las pruebas de manera sencilla.
+Entre las librerías comparadas se han comentado dos que servirían para este estilo, **Pytest** y **Unittest**. Nos decantaremos por **Pytest** debido a su sintaxis, por los elementos `fixtures` y por la posibilidad de parametrizar las pruebas de manera sencilla.
 
 
 ## Documentación Adicional

@@ -16,10 +16,10 @@ pytest
 Para generar un informe en formato, por ejemplo `html`, de la cobertura, es tan sencillo como ejecutar **Pytest** con la opción `--cov`:
 
 ```bash
-pytest --cov=app --cov-report=html --cov-report=xml tests\test_flask_app.py
+pytest --cov=app --cov-report=html --cov-report=xml tests\
 ```
 
-El documento generado se encuentra en la carpeta [htmlcov](../../src/web/htmlcov/), donde, abriendo el index.html en un navegador, se puede ver el coverage.
+Con la opción `--cov-report=html` se genera el reporte en la carpeta [htmlcov](../../src/web/htmlcov/), donde, abriendo el index.html en un navegador, se puede ver el coverage.
 
 ## Ejecución de Unittest
 Para usar **Unittest** como test runner, se puede ejecutar el módulo `unittest` directamente:

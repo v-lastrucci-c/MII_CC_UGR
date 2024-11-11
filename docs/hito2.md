@@ -24,7 +24,7 @@ La herramienta empleada para definir las tareas a ejecutar ha sido **Taskipy**. 
 <img src="./hito2/imgs/taskipy_example.GIF" alt="Test Example" width="400" />
 
 
-Para ejecutar el _task runner_ nos ubicandonos en los directorios [web](../src/web/) o [api](../src/api/) respectivamente y lanzamos el siguiente comando:
+Para ejecutar el _task runner_ nos ubicamos en los directorios [web](../src/web/) o [api](../src/api/) respectivamente y lanzamos el siguiente comando:
 
 ```bash
 poetry run task test
@@ -64,6 +64,11 @@ jobs:
 <img src="./hito2/imgs/github_actions.PNG" alt="Github Actions" width="400" />
 
 *Para ver más resultados de la ejecución del workflow de Integración Continua clique [aquí](https://github.com/v-lastrucci-c/MII_CC_UGR/actions)*.
+
+
+<img src="./hito2/imgs/badge_codecov.PNG" alt="Badge Codecov" width="400" />
+
+*Badge de Codecov*
 
 ## Documentación Adicional
 1. [Librería de Aserciones](./hito2/assertion_library.md)

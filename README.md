@@ -6,7 +6,7 @@ Repositorio para almacenar las prácticas de CC del curso 24-25 del MUII en la U
 ## Descripción del proyecto
 El proyecto **AIChronos** consistirá en la creación de una aplicación que permita la interactuación con un agente inteligente al cuál será accedible mediante el loggeo del usuario y con el que podrá consultar temas generales al mismo tiempo que crear eventos en Google Calendar.
 
-<img src="./imgs/logo.png" alt="Logo" width="325" />
+<img src="./imgs/logo.png" alt="Logo" width="300" />
 
 ## 📍 Hito 2
 - 🔧 [Configuración de la integración Continua](./docs/hito2.md)
