@@ -8,8 +8,13 @@ El proyecto **AIChronos** consistirá en la creación de una aplicación que per
 
 <img src="./imgs/logo.png" alt="Logo" width="300" />
 
+## 📍 Hito 3
+- 🛠️ [Diseño de microservicios](./docs/hito3.md)
+    - 📑 [Justificación técnica del framework elegido para la API](./docs/hito1/tecnologies.md)
+    - 📝 [Descripción detallada de la elección del logger](./docs/hito3/logger.md)
+
 ## 📍 Hito 2
-- 🔧 [Configuración de la integración Continua](./docs/hito2.md)
+- 🔧 [Configuración de la integración continua](./docs/hito2.md)
     - 📝 [Descripción detallada de la elección del gestor de tareas](./docs/hito2/tasks_manager.md)
     - 📚 [Descripción detallada de la biblioteca de aserciones](./docs/hito2/assertion_library.md)
     - 🧪 [Descripción detallada de la elección del marco de pruebas](./docs/hito2/testing_framework.md)
