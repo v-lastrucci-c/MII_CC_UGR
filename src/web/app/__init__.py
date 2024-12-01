@@ -10,6 +10,7 @@ import click
 from flask import Flask
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
+from app.logger_config import logger
 
 
 load_dotenv(override=True)
@@ -18,9 +19,11 @@ db = SQLAlchemy()
 
 
 def create_app():
+    logger.info("Initializing the Flask app...")
     app = Flask(__name__, instance_relative_config=True,
                 static_folder="../static", template_folder="../templates")
-
+    
+    logger.info("Configuring the Flask app...")
     app.config.from_mapping(
         SECRET_KEY=os.getenv("SECRET_KEY", "ai-aichronos-secret-key"),
         SQLALCHEMY_DATABASE_URI=os.getenv("SQLALCHEMY_DATABASE_URI"),
@@ -28,6 +31,7 @@ def create_app():
         PORT=5000
     )    
 
+    logger.info("Adding extra configurations...")
     if os.getenv("TEST_CONFIG") is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile("config.py", silent=True)
@@ -41,9 +45,11 @@ def create_app():
     except OSError:
         pass
 
+    logger.info("Initializing the database...")
     db.init_app(app)
     app.cli.add_command(init_db_command)
 
+    logger.info("Registering blueprints...")
     from . import auth
     app.register_blueprint(auth.bp, url_prefix="/")
 
@@ -51,19 +57,14 @@ def create_app():
 
 
 def init_db():
-    print("Dropping all tables...")
+    logger.info("Dropping all tables...")
     db.drop_all()
-    print("Creating all tables...")
+    logger.info("Creating all tables...")
     db.create_all()
-    print("Database initialized successfully.")
+    logger.info("Database initialized successfully.")
 
 @click.command("init-db")
 def init_db_command():
     """Borrar los datos existentes y crear nuevas tablas."""
     init_db()
     click.echo("Base de datos Inicializada.")
-
-
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True,port=8000)
