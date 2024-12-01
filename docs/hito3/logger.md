@@ -1,4 +1,4 @@
-# Comparativa de Librerías de Logging en Python
+# Comparativa de Librerías de Logging
 
 A continuación, presentaremos una comparativa de las tres principales librerías de logging en Python:
 
