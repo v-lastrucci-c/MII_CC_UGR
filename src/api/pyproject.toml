@@ -10,10 +10,13 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = {extras = ["standard"], version = "^0.115.4"}
+openai = "^1.55.3"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.3"
 pytest-cov = "^6.0.0"
+pytest-mock = "^3.14.0"
 
 [tool.poetry.group.dev.dependencies]
 taskipy = "^1.14.0"
