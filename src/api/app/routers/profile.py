@@ -13,8 +13,8 @@ load_dotenv(override=True)
 
 profile_router = APIRouter()
 
-logger.info("Configurando la base de datos...")
-DATABASE_URL = os.getenv("DATABASE_URL")
+logger.info("Configurando conexion a la base de datos...")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///:memory:")
 engine = create_engine(DATABASE_URL)
 session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
