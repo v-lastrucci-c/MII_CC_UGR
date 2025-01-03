@@ -1,0 +1,34 @@
+name: Docker Auto-Build and Publish
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+  
+      - name: Publish Docker images
+        uses: soltys/publish-docker-compose@v1.0.0
+        with:
+          version: 'latest'
+          docker_compose: 'compose.yml'
+          repo_token: "${{ secrets.AICHRONOS_TOKEN }}"
