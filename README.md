@@ -8,6 +8,13 @@ El proyecto **AIChronos** consistirá en la creación de una aplicación que per
 
 <img src="./imgs/logo.png" alt="Logo" width="300" />
 
+## 📍 Hito 4
+- 🛠️ [Despliegue de microservicios](./docs/hito4.md)
+    - 🖼️ [Descripición detallada de las imágenes base empleadas](./docs/hito4/github_packages.md)
+    - 🛠️ [Documentación sobre los Dockerfiles de los Microservicios](./docs/hito4/dockerfiles.md)
+    - 🏗️ [Documentación sobre el fichero de composición del clúster](./docs/hito4/compose.md)
+    - 🚀 [Documentación sobre la actualización, subida y publicación a Github Packages](./docs/hito4/github_packages.md)
+
 ## 📍 Hito 3
 - 🛠️ [Diseño de microservicios](./docs/hito3.md)
     - 📑 [Justificación técnica del framework elegido para la API](./docs/hito1/tecnologies.md)
