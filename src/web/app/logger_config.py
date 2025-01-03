@@ -6,7 +6,7 @@ logger.remove()
 
 # Agregar salida al archivo logs.log con formato JSON a partir del nivel DEBUG
 logger.add(
-    "logs.log",
+    "logs_web.log",
     level="DEBUG",
     serialize=True
 )

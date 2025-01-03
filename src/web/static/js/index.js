@@ -24,17 +24,20 @@ async function sendMessage() {
         userInput.value = '';
     }
 
+    const apiBaseUrl = 'http://127.0.0.1:8000';
+    const apiEndpoint = `${apiBaseUrl}/api/v1/health`;
+
     try {
-        logger("info", "Sending message to API", { url: "http://localhost:8000/api/v1/health", message });
-        const response = await fetch('http://localhost:8000/api/v1/health',
-        // {
-        //     method: 'GET', // Cambiado a POST
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({ message }), // Enviar el mensaje en el cuerpo
-        // }
-    );
+        logger("info", "Sending message to API", { url: apiEndpoint, message });
+        const response = await fetch(apiEndpoint,
+            // {
+            //     method: 'GET', // Cambiado a POST
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({ message }),
+            // }
+        );
 
         if (response.ok) {
             const data = await response.json();

@@ -20,30 +20,17 @@ db = SQLAlchemy()
 
 def create_app():
     logger.info("Initializing the Flask app...")
-    app = Flask(__name__, instance_relative_config=True,
-                static_folder="../static", template_folder="../templates")
+    app = Flask(__name__, static_folder="../static",
+                template_folder="../templates")
     
     logger.info("Configuring the Flask app...")
+    print("SQLALCHEMY_DATABASE_URI", os.getenv("SQLALCHEMY_DATABASE_URI"))
     app.config.from_mapping(
         SECRET_KEY=os.getenv("SECRET_KEY", "ai-aichronos-secret-key"),
         SQLALCHEMY_DATABASE_URI=os.getenv("SQLALCHEMY_DATABASE_URI"),
-        DEBUG=True,
-        PORT=5000
-    )    
-
-    logger.info("Adding extra configurations...")
-    if os.getenv("TEST_CONFIG") is None:
-        # load the instance config, if it exists, when not testing
-        app.config.from_pyfile("config.py", silent=True)
-    else:
-        # load the test config if passed in
-        app.config.from_mapping(os.getenv("TEST_CONFIG"))
-
-    # ensure the instance folder exists
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
+        DEBUG=os.getenv("DEBUG"),
+        PORT=os.getenv("PORT"),
+    )
 
     logger.info("Initializing the database...")
     db.init_app(app)
