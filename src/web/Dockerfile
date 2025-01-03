@@ -1,5 +1,9 @@
 FROM python:3.11-slim
 
+LABEL org.opencontainers.image.source=https://github.com/v-lastrucci-c/MII_CC_UGR
+LABEL org.opencontainers.image.description="Container for AIChronos WEB"
+LABEL org.opencontainers.image.licenses=MIT
+
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
