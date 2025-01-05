@@ -32,3 +32,6 @@ jobs:
           version: 'latest'
           docker_compose: 'compose.yml'
           repo_token: "${{ secrets.AICHRONOS_TOKEN }}"
+      
+      - name: Test cluster
+        run: ./test_cluster.sh

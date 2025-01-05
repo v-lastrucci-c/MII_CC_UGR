@@ -40,6 +40,14 @@ Se utiliza la imagen oficial `postgres:15` en lugar de otras alternativas debido
 
 **Decisión:** Se elige `postgres:15` porque combina estabilidad (versión fija), características modernas y facilidad de uso, a la vez que evita los problemas de tamaño de `postgres:alpine` y la incertidumbre de actualizaciones automáticas de `postgres:latest`.
 
+
+## Publicación a Github Packages
+Como se describe en [Documentación sobre la actualización, subida y publicación a Github Packages](./hito4/github_packages.md), se automatiza la subida y publicación de la aplicación web y de la api a Github Packages.
+
+<img src="./hito4/imgs/packages.PNG" alt="Logo" width="150" />
+
+*Paquetes visibles en el repositorio*
+
 ## Ejecución del test para validar el funcionamiento del cluster
 
 ## Documentación Adicional
