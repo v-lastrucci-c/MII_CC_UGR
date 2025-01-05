@@ -2,14 +2,12 @@ name: Docker Auto-Build and Publish
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
-  build-and-push:
+  test_and_release_packages:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -26,14 +24,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y docker-compose
   
-      - name: Publish Docker images
+      - name: Test Cluster
+        run: |
+          chmod +x ./test_cluster.sh
+          ./test_cluster.sh
+
+      - name: Publish Docker Images
         uses: soltys/publish-docker-compose@v1.0.0
         with:
           version: 'latest'
           docker_compose: 'compose.yml'
           repo_token: "${{ secrets.AICHRONOS_TOKEN }}"
-      
-      - name: Test cluster
-        run: |
-          chmod +x ./test_cluster.sh
-          ./test_cluster.sh

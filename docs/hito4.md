@@ -50,6 +50,48 @@ Como se describe en [Documentación sobre la actualización, subida y publicaci�
 
 ## Ejecución del test para validar el funcionamiento del cluster
 
+La validación del clúster de contenedores se realiza mediante un script automatizado llamado `test_cluster.sh`. Este script se encarga de construir, levantar y probar los servicios interconectados aprovechando los tests desarrollados durante hitos anteriores, asegurando que el clúster funcione correctamente.
+
+### Pasos del Proceso de Testeo
+
+1. **Construcción y Levantamiento del Clúster**  
+   El script utiliza `docker compose` para construir las imágenes y levantar los contenedores definidos en el archivo `compose.yml`. Este proceso asegura que todos los servicios estén en funcionamiento y disponibles para las pruebas.
+   ```bash
+   docker compose up --build -d
+   ```
+
+2. **Espera para la Inicialización de los Servicios**  
+   Algunos servicios, como la base de datos, pueden necesitar tiempo adicional para inicializarse. El script incluye un retraso configurado con `sleep 10` para garantizar que los servicios estén listos antes de ejecutar las pruebas.
+
+3. **Ejecución de Tests Unitarios y de Integración**  
+   Los tests específicos de cada microservicio se ejecutan desde sus respectivos contenedores utilizando `poetry run task test`.  
+   ```bash
+   docker exec aichronos-web poetry run task test
+   docker exec aichronos-api poetry run task test
+   ```
+
+4. **Detención del Clúster**  
+   Al finalizar las pruebas, el script desmonta todos los contenedores para liberar los recursos.
+   ```bash
+   docker compose down
+   ```
+
+### Automatización con GitHub Actions
+
+El test del clúster está integrado como un paso previo a la publicación de las imagenes a Github Packages para no realizarlo en caso de posibles fallos.
+
+El siguiente bloque YAML en el flujo de trabajo define el paso para ejecutar el test del clúster:
+
+```yaml
+- name: Test Cluster
+  run: |
+    chmod +x ./test_cluster.sh
+    ./test_cluster.sh
+```
+
+### Resultados del Test
+
+
 ## Documentación Adicional
 
 1. [Documentación sobre los Dockerfiles de los Microservicios](./hito4/dockerfiles.md)

@@ -2,7 +2,7 @@ name: Python AIChronos Tests and Upload Coverage
 
 on:
   push:
-    branches: [ "main", "hito2" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
