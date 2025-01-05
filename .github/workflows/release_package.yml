@@ -1,4 +1,4 @@
-name: Docker Auto-Build and Publish
+name: AIChronos Test of Cluster and Publish to Github Packages
 
 on:
   push:
@@ -7,11 +7,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test_and_release_packages:
+  publish:
+    name: Tests the Cluster and Publishes to Github Packages
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
       - name: Checkout
@@ -29,7 +27,7 @@ jobs:
           chmod +x ./test_cluster.sh
           ./test_cluster.sh
 
-      - name: Publish Docker Images
+      - name: Publish Docker Images to Github Packages
         uses: soltys/publish-docker-compose@v1.0.0
         with:
           version: 'latest'

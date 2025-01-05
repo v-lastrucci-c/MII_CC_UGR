@@ -89,8 +89,9 @@ El siguiente bloque YAML en el flujo de trabajo define el paso para ejecutar el 
     ./test_cluster.sh
 ```
 
-### Resultados del Test
+<img src="./hito4/imgs/test_cluster.PNG" alt="Logo" width="500" />
 
+*Ejecución de los tests sobre el clúster*
 
 ## Documentación Adicional
 
