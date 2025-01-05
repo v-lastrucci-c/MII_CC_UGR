@@ -34,4 +34,6 @@ jobs:
           repo_token: "${{ secrets.AICHRONOS_TOKEN }}"
       
       - name: Test cluster
-        run: ./test_cluster.sh
+        run: |
+          chmod +x ./test_cluster.sh
+          ./test_cluster.sh
