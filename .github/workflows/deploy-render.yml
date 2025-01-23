@@ -17,8 +17,7 @@ jobs:
 
       - name: Install Render CLI
         run: |
-          curl -fsSL https://render.com/static/cli/render -o /usr/local/bin/render
-          chmod +x /usr/local/bin/render
+          npm install -g @render-cli/cli
 
       - name: Authenticate to Render
         env:
