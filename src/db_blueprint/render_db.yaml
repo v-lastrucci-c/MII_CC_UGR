@@ -1,0 +1,11 @@
+databases:
+- name: MII_CC_UGR_DB
+  databaseName: aichronos_db
+  user: aichronos
+  plan: free
+  region: frankfurt
+  ipAllowList:
+  - source: 0.0.0.0/0
+    description: everywhere
+  postgresMajorVersion: "15"
+version: "1"

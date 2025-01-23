@@ -1,0 +1,16 @@
+services:
+- type: web
+  name: MII_CC_UGR_API
+  runtime: docker
+  repo: https://github.com/v-lastrucci-c/MII_CC_UGR
+  plan: free
+  envVars:
+  - key: DATABASE_URL
+    sync: false
+  - key: OPENAI_API_KEY
+    sync: false
+  region: frankfurt
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+  rootDir: ./src/api
+version: "1"
