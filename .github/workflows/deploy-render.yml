@@ -17,7 +17,7 @@ jobs:
 
       - name: Install Render CLI
         run: |
-          npm install -g @render-cli/cli
+          curl -fsSL https://raw.githubusercontent.com/render-oss/cli/refs/heads/main/bin/install.sh | sh
 
       - name: Authenticate to Render
         env:
