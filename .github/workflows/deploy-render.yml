@@ -1,0 +1,31 @@
+name: Deploy AIChronos to Render
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy AIChronos to Render
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Render CLI
+        run: |
+          curl -fsSL https://render.com/static/cli/render -o /usr/local/bin/render
+          chmod +x /usr/local/bin/render
+
+      - name: Authenticate to Render
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          render login --token $RENDER_API_KEY
+
+      - name: Deploy Infrastructure
+        run: |
+          render blueprint apply render.yaml
