@@ -24,19 +24,17 @@ async function sendMessage() {
         userInput.value = '';
     }
 
-    const apiEndpoint = `${apiBaseUrl}/api/v1/health`;
+    const apiEndpoint = `${apiBaseUrl}/api/v1/llm/prompt`;
 
     try {
         logger("info", "Sending message to API", { url: apiEndpoint, message });
-        const response = await fetch(apiEndpoint,
-            // {
-            //     method: 'GET', // Cambiado a POST
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({ message }),
-            // }
-        );
+        const response = await fetch(apiEndpoint, {
+            method: 'POST', // Cambiado a POST
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ user_id: user_email, message }),
+        });
 
         if (response.ok) {
             const data = await response.json();
