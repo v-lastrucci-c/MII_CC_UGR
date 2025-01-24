@@ -8,6 +8,12 @@ El proyecto **AIChronos** consistirá en la creación de una aplicación que per
 
 <img src="./imgs/logo.png" alt="Logo" width="300" />
 
+## 📍 Hito 5
+- 🛠️ [Despliegue automático al PaaS](./docs/hito5.md)
+    - 🏗️ [Documentación sobre la comparativa entre los PaaS](./docs/hito5/paas_selection.md)
+    - 📝 [Documentación sobre la herramienta de despliegue Render](./docs/hito5/deployment_tool.md)
+    - 🚀 [Documentación sobre el despliegue automatizado mediante GitHub Acitons](./docs/hito5/deploy_githubActions.md)
+
 ## 📍 Hito 4
 - 🛠️ [Despliegue de microservicios](./docs/hito4.md)
     - 🖼️ [Descripición detallada de las imágenes base empleadas](./docs/hito4/github_packages.md)
