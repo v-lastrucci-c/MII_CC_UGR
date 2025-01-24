@@ -80,7 +80,7 @@ def test_get_statistics_success():
     response = client.get("/api/v1/stats/summary")
     assert response.status_code == 200
     assert "total_messages" in response.json()
-    assert "unique_users" in response.json()
+    assert "users" in response.json()
 
 
 def test_healthcheck_success():
