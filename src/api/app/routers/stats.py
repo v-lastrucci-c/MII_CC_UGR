@@ -28,7 +28,7 @@ def update_stats_data():
 @stats_router.get("/summary", response_model=dict)
 def get_statistics():
     try:
-        logger.info("Recuperando estadísticas de uso")
+        logger.info("Recuperando estadísticas de uso...")
         stats_data = update_stats_data()
         return {
             "total_messages": stats_data["total_messages"],
