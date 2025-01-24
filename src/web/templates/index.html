@@ -44,8 +44,10 @@
             <button id="submit-btn">Submit</button>
         </div>
     </div>
-
-    <script type="module" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script>
+        const apiBaseUrl = "{{ apiBaseUrl }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     <script src="{{ url_for('static', filename='js/rain.js') }}"></script>
 </body>
 </html>

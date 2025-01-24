@@ -5,6 +5,7 @@ Contiene las funciones relacionadas con
 Uso:
     ./auth.py
 """
+import os
 import functools
 
 from flask import (
@@ -14,6 +15,9 @@ from flask import (
 from app.logger_config import logger
 from app.models import User
 from app import db
+
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 bp = Blueprint("auth", __name__)
 
@@ -34,7 +38,7 @@ def login_required(view):
 @login_required
 def index():
     logger.info("Cargando página principal para usuario autenticado.")
-    return render_template('index.html')
+    return render_template('index.html', apiBaseUrl=os.getenv("apiBaseUrl"))
 
 @bp.before_app_request
 def load_logged_in_user():
