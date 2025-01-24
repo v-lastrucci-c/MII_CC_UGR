@@ -38,7 +38,7 @@ def login_required(view):
 @login_required
 def index():
     logger.info("Cargando página principal para usuario autenticado.")
-    return render_template('index.html', apiBaseUrl=os.getenv("apiBaseUrl"))
+    return render_template('index.html', apiBaseUrl=os.getenv("API_BASE_URL"))
 
 @bp.before_app_request
 def load_logged_in_user():
