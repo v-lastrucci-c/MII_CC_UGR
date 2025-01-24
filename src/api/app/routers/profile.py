@@ -1,23 +1,12 @@
 from datetime import datetime
 from pydantic import BaseModel
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from fastapi import APIRouter, HTTPException
 
 from app.logger_config import logger
 from app.internal.models import User
-
-import os
-from dotenv import load_dotenv
-load_dotenv(override=True)
+from app.internal.db import session
 
 profile_router = APIRouter()
-
-logger.info("Configurando conexion a la base de datos...")
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///:memory:")
-engine = create_engine(DATABASE_URL)
-session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
 
 class UserProfile(BaseModel):
     email: str

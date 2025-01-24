@@ -66,7 +66,7 @@ def test_send_message_success():
         json={"user_id": "123", "message": "Hola"}
     )
     assert response.status_code == 200
-    assert response.json() == {"response": "Interacción con el modelo todavía en desarrollo"}
+    assert response.json() == {"message": "Interacción con el modelo todavía en desarrollo"}
 
 def test_send_message_invalid_request():
     response = client.post(
@@ -80,7 +80,7 @@ def test_get_statistics_success():
     response = client.get("/api/v1/stats/summary")
     assert response.status_code == 200
     assert "total_messages" in response.json()
-    assert "unique_users" in response.json()
+    assert "users" in response.json()
 
 
 def test_healthcheck_success():

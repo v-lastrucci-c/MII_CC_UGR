@@ -5,7 +5,7 @@ Contiene los modelos relacionados con
 Uso:
     ./models.py
 """
-from sqlalchemy import Column, String, DateTime
+from sqlalchemy import Column, String, DateTime, Integer
 from sqlalchemy.orm import declarative_base
 from datetime import datetime, timezone
 
@@ -23,3 +23,10 @@ class User(Base):
 
     def __repr__(self):
         return f"<User email={self.email} name={self.name}>"
+
+class Responses(Base):
+    __tablename__ = "responses"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    response = Column(String(50))
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))

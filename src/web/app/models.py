@@ -5,7 +5,7 @@ Contiene los modelos relacionados con
 Uso:
     ./models.py
 """
-from sqlalchemy import String, DateTime
+from sqlalchemy import String, DateTime, Integer
 from sqlalchemy.orm import Mapped, mapped_column
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -34,3 +34,10 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<User {self.email}>'
+
+class Responses(db.Model):
+    __tablename__ = "responses"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    response: Mapped[str] = mapped_column(String(50))
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))

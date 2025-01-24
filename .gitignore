@@ -5,6 +5,7 @@ __pycache__/
 
 # Extra Files
 Roadmap.md
+test.db
 
 # C extensions
 *.so
