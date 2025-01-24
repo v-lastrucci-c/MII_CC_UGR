@@ -28,17 +28,7 @@
     - El usuario puede finalizar la conversación en cualquier momento.
     - (Opcional) El agente será capaz de usar una herramienta para crear eventos en el calendario principal del usuario en Google Calendar. 
 
-4. Recuperación de Contraseña:
-
-    Como usuario que ha olvidado su contraseña quiero restablecerla a través de la interfaz web para poder acceder nuevamente a mi cuenta.
-
-    Criterios de Aceptación:
-
-    - El usuario puede recuperar la contraseña desde la interfaz web.
-    - El usuario puede actualizar la contraseña a través de un enlace enviado a su correo.
-    - La nueva contraseña se actualiza de manera segura en la base de datos.
-
-5. Monitoreo y Generación de Reportes:
+4. Monitoreo y Generación de Reportes:
 
     Como administrador quiero acceder a reportes y monitorear las interacciones con el agente para mejorar su desempeño y solucionar problemas.
 

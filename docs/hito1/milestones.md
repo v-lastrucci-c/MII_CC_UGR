@@ -15,7 +15,7 @@
 4. Desarrollo de la Interfaz Web con Flask
     - Configurar el proyecto Flask.
     - Implementar el microservicio de autenticación y gestión de usuarios con Flask.
-    - Desarrollar las páginas de registro, inicio de sesión y recuperación de contraseña.
+    - Desarrollar las páginas de registro e inicio de sesión.
     - Integrar los endpoints de FastAPI en la interfaz web.
 
 5. Integración con LangGraph y Funcionalidades del Agente
