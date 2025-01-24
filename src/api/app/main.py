@@ -19,7 +19,7 @@ app = FastAPI(
 logger.info("Configurando CORS...")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost", "http://127.0.0.1", "http://127.0.0.1:5000"],
+    allow_origins=["http://localhost", "http://127.0.0.1", "http://127.0.0.1:5000", "https://mii-cc-ugr-api.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],  # Permitir todos los métodos HTTP
     allow_headers=["*"],  # Permitir todos los encabezados
