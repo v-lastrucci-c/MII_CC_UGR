@@ -5,6 +5,9 @@ from sqlalchemy.orm import sessionmaker
 
 from app.logger_config import logger
 
+from dotenv import load_dotenv
+load_dotenv(override=True)
+
 logger.info("Configurando conexion a la base de datos...")
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///test.db")
 engine = create_engine(DATABASE_URL)
