@@ -28,5 +28,5 @@ class Responses(Base):
     __tablename__ = "responses"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    response = Column(String(50))
+    response = Column(String)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))

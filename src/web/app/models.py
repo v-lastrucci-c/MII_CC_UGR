@@ -39,5 +39,5 @@ class Responses(db.Model):
     __tablename__ = "responses"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    response: Mapped[str] = mapped_column(String(50))
+    response: Mapped[str] = mapped_column(String)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))

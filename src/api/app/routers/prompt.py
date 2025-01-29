@@ -4,6 +4,7 @@ from fastapi import APIRouter, HTTPException
 
 from app.logger_config import logger
 from app.internal.models import Responses
+from app.internal.async_openai import AsyncOpenAi
 from app.internal.db import session
 
 prompt_router = APIRouter()
@@ -15,7 +16,7 @@ class MessageResponse(BaseModel):
     message: str
 
 @prompt_router.post("/prompt", response_model=MessageResponse)
-def send_message(request: MessageRequest):
+async def send_message(request: MessageRequest):
     """
     Procesa un mensaje enviado por el usuario, genera una respuesta simulada y la almacena en la base de datos.
     """
@@ -23,8 +24,8 @@ def send_message(request: MessageRequest):
     try:
         # Log del mensaje recibido
         logger.info(f"Recibido mensaje del usuario {request.user_id}: {request.message}")
-
-        response_text = "Interacción con el modelo todavía en desarrollo"
+        llm_model = AsyncOpenAi()
+        response_text = await llm_model.llm_response(user_question=request.message)
         
         logger.info("Guardando respuesta en la base de datos...")
         new_response = Responses(response=response_text, created_at=datetime.now(timezone.utc))
