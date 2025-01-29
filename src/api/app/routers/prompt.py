@@ -21,10 +21,7 @@ async def send_message(request: MessageRequest):
     Procesa un mensaje enviado por el usuario, genera una respuesta simulada y la almacena en la base de datos.
     """
     db = session()
-    try:        
-        if not request.message or request.message.strip() == "":
-            raise HTTPException(status_code=400, detail="El mensaje no puede estar vacío.")
-
+    try:
         # Log del mensaje recibido
         logger.info(f"Recibido mensaje del usuario {request.user_id}: {request.message}")
         llm_model = AsyncOpenAi()

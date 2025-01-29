@@ -60,7 +60,7 @@ userInput.addEventListener('keypress', (e) => {
 
 // Initial welcome message
 logger("info", "Initializing application");
-addMessage("Welcome to the Matrix Terminal. Type your message and press Enter.");
+addMessage("Bienvenido a AIChronos, en qué te podemos ayudar?");
 
 function toggleLogoutForm() {
     var logoutForm = document.getElementById('logout-form-container');
