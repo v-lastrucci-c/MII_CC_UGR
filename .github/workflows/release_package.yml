@@ -11,11 +11,6 @@ jobs:
     name: Tests the Cluster and Publishes to Github Packages
     runs-on: ubuntu-latest
 
-    env:
-      OPENAI_MODEL: "gpt-4o-mini"
-      AICHRONOS_PROMPT_PATH: "./app/internal/prompts/system_prompt.yml"
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
