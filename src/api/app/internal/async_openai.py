@@ -14,7 +14,7 @@ class AsyncOpenAi:
     def __init__(self):
         
         self.llm = ChatOpenAI(
-            model= os.getenv("OPENAI_MODEL"),
+            model = os.getenv("OPENAI_MODEL"),
             api_key= os.getenv("OPENAI_API_KEY"),
             max_tokens=4096,
             timeout=30,

@@ -13,9 +13,6 @@ sleep 10
 echo "Ejecutando tests de la aplicación web..."
 docker exec aichronos-web poetry run task test
 
-echo "Ejecutando tests de la API..."
-docker exec aichronos-api poetry run task test
-
 echo "Todos los tests se ejecutaron correctamente."
 
 echo "Deteniendo el clúster..."

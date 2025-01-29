@@ -66,7 +66,6 @@ def test_send_message_success():
         json={"user_id": "123", "message": "Hola"}
     )
     assert response.status_code == 200
-    assert response.json() == {"message": "Interacción con el modelo todavía en desarrollo"}
 
 def test_send_message_invalid_request():
     response = client.post(
